@@ -24,6 +24,7 @@ def get_weather(city, open_weather_token):
               f"Хорошего дня"
               )
 
+
     except Exception as ex:
         print(ex)
         print("Проверьте название города")
