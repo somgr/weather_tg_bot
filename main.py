@@ -18,10 +18,13 @@ def get_weather(city, open_weather_token):
         wind = data["wind"]["speed"]
         sunrise_timestamp = datetime.datetime.fromtimestamp(data["sys"]["sunrise"])
         sunset_timestamp = datetime.datetime.fromtimestamp(data["sys"]["sunset"])
+        length_of_the_day = datetime.datetime.fromtimestamp(data["sys"]["sunset"]) - datetime.datetime.fromtimestamp(
+            data["sys"]["sunrise"])
 
         print(f"Погода в городе {city}\nТемпература: {cur_weather}\n"
               f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст.\nВетер: {wind} м/с\n"
               f"Восход солнца: {sunrise_timestamp}\nЗакат солнца {sunset_timestamp}\n"
+              f"Продолжительность дня: {length_of_the_day}\n"
               f"Хорошего дня"
               )
 
