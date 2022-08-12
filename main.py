@@ -17,10 +17,11 @@ def get_weather(city, open_weather_token):
         pressure = data["main"]["pressure"]
         wind = data["wind"]["speed"]
         sunrise_timestamp = datetime.datetime.fromtimestamp(data["sys"]["sunrise"])
+        sunset_timestamp = datetime.datetime.fromtimestamp(data["sys"]["sunset"])
 
         print(f"Погода в городе {city}\nТемпература: {cur_weather}\n"
               f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст.\nВетер: {wind} м/с\n"
-              f"Восход солнца: {sunrise_timestamp}\n"
+              f"Восход солнца: {sunrise_timestamp}\nЗакат солнца {sunset_timestamp}\n"
               f"Хорошего дня"
               )
 
